@@ -27,7 +27,7 @@ toggleAvailability (){
 }
 console.log(Car)
 let vehicl= new Car("G-wagon","Suv")
-vehicl.make
+console.log(vehicl.make)
 
 // class vehicle extends Car{
 //   constructor(make,model,year,isAvailable){
@@ -84,27 +84,6 @@ console.log(rentalll);
 // inventory. Then, create an instance of the Rental class or function constructor for
 // a rental involving the car you created. Finally, calculate the rental duration using
 // the calculateRentalDuration method.
-
-// class Rental{
-//   constructor(car,renterName,rentalStartDate,rentalEndDate){
-//       this.car=car
-//       this.renterName=renterName
-//       this.rentalStartDate=rentalStartDate
-//       this.rentalEndDate=rentalEndDate
-//   }
-//   rentallll(){
-//       this.renterName=!this.renterName()
-//   }
-// }
-// let rentall=new Rental("car object","Janet",20,30)
-// console.log(rentall);
-
-
-
-
-
-
-
 // Question2
 // You are building a simple quiz app that contains multiple-choice questions. Your task is
 // to create two JavaScript classes: Question and Quiz. The Question class will represent
@@ -155,5 +134,13 @@ class Quiz{
     this.question.push(question)
     console.log(addQuestions)
   }
-      
+  nextQuestion(){
+    this.currentQuestionindex++
+  }
+  submitAnswer(userAnswer) {
+  const currentQuestion = this.questions[this.currentQuestionIndex];
+  if (currentQuestion.checkAnswer(userAnswer)) {
+  this.score++;
+    }
+}
 }
